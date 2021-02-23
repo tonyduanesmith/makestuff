@@ -1,0 +1,11 @@
+# All node_modules folders
+node_modules
+
+# All the dist folders used
+dist
+lib
+
+# Dev tools
+/packages/dev-tools/tracer/*
+/packages/dev-tools/playground/*
+/packages/typings/generated/*

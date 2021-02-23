@@ -1,11 +1,11 @@
 const theme = {
-  spacing: 12,
-  sizing: [10, 20, 30],
+  spacing: 8,
   palette: {
-    primary: '#007bff',
+    primary: {
+      main: "#E95A0C",
+    },
   },
-  shadows: ["none","0px 2px 1px -1px rgba(0,0,0,0.05),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)"]
+  shadows: ["none", "0px 0px 20px -7px rgba(0,0,0,0.3)"],
 };
 
 export default theme;
-
