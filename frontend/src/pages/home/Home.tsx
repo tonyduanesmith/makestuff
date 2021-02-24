@@ -1,7 +1,5 @@
-import Header from "../../molecules/header/Header"
-
 const Home = () => {
-    return <Header/>;
-}
+  return <div>home</div>;
+};
 
 export default Home;

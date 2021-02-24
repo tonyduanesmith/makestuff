@@ -1,30 +1,17 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { ThemeProvider } from "@material-ui/core/styles";
+import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
+import { ThemeProvider } from "styled-components";
 
 import theme from "./theme";
-import Home from "./pages/home/Home";
-import Projects from "./pages/projects/Projects"
-import Contact from "./pages/contact/Contact"
-
+import Routes from "./routes/Routes";
 
 const App = () => {
   return (
-    <ThemeProvider theme={theme}>
-        <Router>
-          <Switch>
-            <Route exact path="/">
-                <Home/>
-            </Route>
-            <Route path="/projects">
-              <Projects />
-            </Route>
-            <Route path="/contact">
-              <Contact />
-            </Route>
-          </Switch>
-        </Router>
-    </ThemeProvider>
+    <MuiThemeProvider theme={theme}>
+      <ThemeProvider theme={theme}>
+        <Routes />
+      </ThemeProvider>
+    </MuiThemeProvider>
   );
-}
+};
 
 export default App;

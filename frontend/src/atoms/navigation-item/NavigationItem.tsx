@@ -1,4 +1,6 @@
-import Link from "../link/Link";
+import Box from "@material-ui/core/Box";
+
+import { StyledLink } from "./styled";
 
 interface Props {
   children: string;
@@ -6,7 +8,13 @@ interface Props {
 }
 
 const NavigationItem = ({ children, path }: Props) => {
-  return <Link path={path}>{children}</Link>;
+  return (
+    <StyledLink to={path}>
+      <Box component="span" fontWeight="fontWeightBold" fontSize="h6.fontSize">
+        {children}
+      </Box>
+    </StyledLink>
+  );
 };
 
 export default NavigationItem;

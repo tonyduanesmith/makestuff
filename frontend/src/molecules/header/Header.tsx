@@ -1,18 +1,16 @@
 import { useTheme } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
-import { Link } from "react-router-dom";
-import NavigationItem from "../../atoms/navigation-item/NavigationItem";
+import Navigation from "../navigation/Navigation";
 
 import BrandIcon from "../../atoms/brand-icon/BrandIcon";
+import navigation from "../../constants/navigation";
 
 const Header = () => {
   const theme = useTheme();
-
-  console.log(theme.palette.primary);
   return (
-    <Box width={1} height={60} boxShadow={1} padding={2}>
+    <Box height={60} boxShadow={1} padding={2} display="flex" alignItems="center" justifyContent="space-between">
       <BrandIcon color={theme.palette.primary.main} />
-      <NavigationItem path="/contact">Contact</NavigationItem>
+      <Navigation navigation={navigation} />
     </Box>
   );
 };
