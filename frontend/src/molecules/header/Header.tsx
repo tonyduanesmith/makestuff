@@ -9,7 +9,7 @@ import navigation from "../../constants/navigation";
 const Header = () => {
   const theme = useTheme();
   return (
-    <Box boxShadow={1} padding={2} display="flex" alignItems="center" justifyContent="space-between">
+    <Box boxShadow={1} padding={2} display="flex" alignItems="center" justifyContent="space-between" zIndex="appBar">
       <Link to="/">
         <Box height={60}>
           <BrandIcon color={theme.palette.primary.main} />
