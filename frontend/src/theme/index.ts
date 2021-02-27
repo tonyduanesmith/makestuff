@@ -37,6 +37,11 @@ const theme = createMuiTheme({
     "0px 0px 20px -7px rgba(0,0,0,0.3)",
     "0px 0px 20px -7px rgba(0,0,0,0.3)",
   ],
+  typography: {
+    h4: {
+      fontWeight: 700,
+    },
+  },
 });
 
 export default theme;

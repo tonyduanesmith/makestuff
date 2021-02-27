@@ -13,23 +13,12 @@ app.listen(PORT, () => console.log(`Server started on port: ${PORT}`));
 
 app.use("/articles", require("./routes/articleRoutes"));
 
-// const MongoClient = require("mongodb").MongoClient;
-// const assert = require("assert");
-
-// const url = "mongodb://localhost:2717";
-// const dbName = "makestuff";
-
-// MongoClient.connect(url, (error, client) => {
-//     assert.strictEqual(null, error);
-//     console.log("Connected successfully to the server");
-
-//     const db = client.db(dbName);
-
-//     client.close();
-// })
-
 console.log("Connecting to MongoDB");
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true },(error) => {
-    if(error) return console.error(error);
+mongoose.connect(
+  process.env.MONGODB_URI,
+  { useNewUrlParser: true, useUnifiedTopology: true, dbName: "makestuff" },
+  async error => {
+    if (error) return console.error(error);
     console.log("MonogDB connection established");
-})
+  },
+);
