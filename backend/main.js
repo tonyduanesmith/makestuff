@@ -1,24 +1,23 @@
-const express = require("express");
-const cors = require("cors");
 const mongoose = require("mongoose");
+const { ApolloServer } = require("apollo-server");
 require("dotenv").config();
 
-const app = express();
-app.use(cors());
-app.use(express.json());
+const typeDefs = require("./graphql/typeDefs");
+const resolvers = require("./graphql/resolvers");
 
 const PORT = process.env.PORT || 5000;
-console.log("Starting server...");
-app.listen(PORT, () => console.log(`Server started on port: ${PORT}`));
 
-app.use("/articles", require("./routes/articleRoutes"));
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+});
 
-console.log("Connecting to MongoDB");
-mongoose.connect(
-  process.env.MONGODB_URI,
-  { useNewUrlParser: true, useUnifiedTopology: true, dbName: "makestuff" },
-  async error => {
-    if (error) return console.error(error);
-    console.log("MonogDB connection established");
-  },
-);
+mongoose
+  .connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true, dbName: "makestuff" })
+  .then(() => {
+    console.log("Connected to the database");
+    return server.listen({ port: PORT });
+  })
+  .then(res => {
+    console.log(`Server started on port: ${res.url}`);
+  });
