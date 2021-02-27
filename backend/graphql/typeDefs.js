@@ -2,6 +2,7 @@ const { gql } = require("apollo-server");
 
 module.exports = gql`
   type Article {
+    id: ID!
     heading: String!
     subheading: String!
     created: String!
@@ -12,6 +13,7 @@ module.exports = gql`
   }
   type Query {
     articles: [Article]
+    article(id: ID!): Article
   }
   input ArticleInput {
     heading: String!
@@ -21,6 +23,6 @@ module.exports = gql`
     sidebar_markdown: String
   }
   type Mutation {
-    addArticle(articleInput: ArticleInput): Article
+    createArticle(articleInput: ArticleInput): Article!
   }
 `;

@@ -13,9 +13,24 @@ module.exports = {
         throw new Error(error);
       }
     },
+    async article(parent, { id }) {
+      const article = await Article.findById(id);
+      try {
+        if (article) {
+          return article;
+        } else {
+          throw new Error("Article not found");
+        }
+      } catch (error) {
+        throw new Error(error);
+      }
+    },
   },
   Mutation: {
-    async addArticle(parent, { articleInput: { heading, subheading, main_markdown, sidebar_markdown, image_path } }) {
+    async createArticle(
+      parent,
+      { articleInput: { heading, subheading, main_markdown, sidebar_markdown, image_path } },
+    ) {
       const newArticle = new Article({
         heading,
         subheading,
