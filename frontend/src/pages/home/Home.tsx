@@ -29,21 +29,28 @@ const Home = () => {
       </Box>
       <Box width="100%" margin={0}>
         <Box marginX={{ xs: 2, sm: 2, md: 4, lg: 20, xl: 40 }} paddingY={4}>
-          <Box fontSize={32} display="flex" alignItems="center" flexDirection="column" color="primary.main">
+          <Box
+            fontSize={32}
+            display="flex"
+            alignItems="center"
+            flexDirection="column"
+            color="primary.main"
+            marginBottom={2}
+          >
             <Typography variant="h5" color="textPrimary">
               Recent Projects
             </Typography>
             <KeyboardArrowDownIcon fontSize="inherit" />
-            <Grid container>
-              {articles.map(article => {
-                return (
-                  <Grid item xs={12} sm={6} md={4} key={article.id}>
-                    <ProjectCard article={article} />
-                  </Grid>
-                );
-              })}
-            </Grid>
           </Box>
+          <Grid container>
+            {articles.map(article => {
+              return (
+                <Grid item xs={12} sm={6} md={4} key={article.id}>
+                  <ProjectCard article={article} />
+                </Grid>
+              );
+            })}
+          </Grid>
         </Box>
       </Box>
     </>
