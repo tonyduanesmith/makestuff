@@ -1,4 +1,5 @@
 const articlesResolvers = require("./articles");
+const dateTimeResolvers = require("./datetime");
 
 module.exports = {
   Query: {
@@ -6,5 +7,8 @@ module.exports = {
   },
   Mutation: {
     ...articlesResolvers.Mutation,
+  },
+  DateTime: {
+    ...dateTimeResolvers.DateTime,
   },
 };

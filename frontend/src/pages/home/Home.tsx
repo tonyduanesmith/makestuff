@@ -1,31 +1,28 @@
-import { useEffect, useState } from "react";
-
+import moment from "moment";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import Card from "@material-ui/core/Card";
 import CardMedia from "@material-ui/core/CardMedia";
-import CardContent from "@material-ui/core/CardContent";
+import { useQuery } from "@apollo/client";
 
 import Image from "../../atoms/image/Image";
 import me from "../../assets/images/me.jpg";
+import { GET_ARTICLES } from "./graphql";
+import { Article } from "./types";
 
 const Home = () => {
-  const [articles, setArticles] = useState([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch(`${process.env.REACT_APP_BACKEND_ENDPOINT}articles` as RequestInfo);
-      const articles = await response.json();
-      console.log(articles);
-    };
+  const { loading, data } = useQuery<{ articles: Array<Article> }>(GET_ARTICLES, { variables: { first: 3 } });
 
-    fetchData();
-  });
+  const articles = data?.articles ?? [];
+
+  console.log(articles);
+
   return (
     <>
       <Box bgcolor="primary.main" width="100%" margin={0}>
-        <Box marginX={{ sm: 2, md: 40 }} paddingY={2} bgcolor="primary.main">
+        <Box marginX={{ sm: 2, md: 4, lg: 20, xl: 40 }} paddingY={2} bgcolor="primary.main">
           <Grid container>
             <Grid item xs={12} sm={4}>
               <Box padding={2}>
@@ -50,18 +47,29 @@ const Home = () => {
         </Box>
       </Box>
       <Box width="100%" margin={0}>
-        <Box marginX={{ sm: 2, md: 40 }} paddingY={4}>
+        <Box marginX={{ sm: 2, md: 4, lg: 20, xl: 40 }} paddingY={4}>
           <Box fontSize={48} display="flex" alignItems="center" flexDirection="column" color="primary.main">
             <Typography variant="h4" color="textPrimary">
               Recent Projects
             </Typography>
             <KeyboardArrowDownIcon fontSize="inherit" />
-            <Grid container>
-              <Grid item md={4}>
-                <Card></Card>
-              </Grid>
-              <Grid item md={4}></Grid>
-              <Grid item md={4}></Grid>
+            <Grid container spacing={4}>
+              {articles.map(article => {
+                return (
+                  <Grid item xs={12} sm={6} md={4} key={article.id}>
+                    <Card>
+                      <Box height={200} clone>
+                        <CardMedia image={`${process.env.PUBLIC_URL}${article.image_path}`} />
+                      </Box>
+
+                      <Box display="flex" justifyContent="space-between" padding={2}>
+                        <Typography>{article.heading}</Typography>
+                        <Typography>{moment(article.created).fromNow()}</Typography>
+                      </Box>
+                    </Card>
+                  </Grid>
+                );
+              })}
             </Grid>
           </Box>
         </Box>

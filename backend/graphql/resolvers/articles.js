@@ -5,9 +5,9 @@ const { validateArticlesInput } = require("../validators/articlesValidator");
 
 module.exports = {
   Query: {
-    async articles() {
+    async articles(parent, { first = 20 }) {
       try {
-        const articles = await Article.find();
+        const articles = await Article.find().sort({ created: -1 }).limit(first);
         return articles;
       } catch (error) {
         throw new Error(error);
