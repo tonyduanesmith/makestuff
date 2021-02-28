@@ -13,24 +13,21 @@ interface Props {
 }
 
 const Introduction = ({ heading, children, image = "", imageFrame = "default" }: Props) => {
-  console.log(image);
   const hasImage = image !== "";
   return (
     <Grid container>
       {hasImage && (
         <Grid item xs={12} sm={4}>
-          <Box padding={2} textAlign={{ xs: "center" }}>
+          <Box textAlign={{ xs: "center" }}>
             <Image src={image} alt="me" frame={imageFrame} />
           </Box>
         </Grid>
       )}
       <Grid item xs={12} sm={hasImage ? 8 : 12}>
-        <Box padding={2}>
-          <Typography variant="h4" paragraph>
-            {heading}
-          </Typography>
-          <Typography color="textSecondary">{children}</Typography>
-        </Box>
+        <Typography variant="h4" paragraph>
+          {heading}
+        </Typography>
+        <Typography color="textSecondary">{children}</Typography>
       </Grid>
     </Grid>
   );

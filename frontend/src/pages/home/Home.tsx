@@ -17,7 +17,7 @@ const Home = () => {
   return (
     <>
       <Box bgcolor="primary.main" width="100%" margin={0}>
-        <Box marginX={{ sm: 2, md: 4, lg: 20, xl: 40 }} paddingY={2} bgcolor="primary.main">
+        <Box marginX={{ xs: 2, sm: 2, md: 4, lg: 20, xl: 40 }} paddingY={2} bgcolor="primary.main">
           <Introduction image={me} heading="test" imageFrame="circle">
             This is some text This is some textThis is some text This is some text This is some text This is some text
             This is some text This is some text This is some text This is some text This is some text This is some text
@@ -28,7 +28,7 @@ const Home = () => {
         </Box>
       </Box>
       <Box width="100%" margin={0}>
-        <Box marginX={{ sm: 2, md: 4, lg: 20, xl: 40 }} paddingY={4}>
+        <Box marginX={{ xs: 2, sm: 2, md: 4, lg: 20, xl: 40 }} paddingY={4}>
           <Box fontSize={32} display="flex" alignItems="center" flexDirection="column" color="primary.main">
             <Typography variant="h5" color="textPrimary">
               Recent Projects

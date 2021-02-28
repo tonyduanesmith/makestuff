@@ -6,6 +6,7 @@ export const GET_ARTICLES = gql`
       heading
       created
       image_path
+      id
     }
   }
 `;
