@@ -8,13 +8,14 @@ interface Props extends RouteComponentProps {
   navigation: Array<NavigationType>;
 }
 
-const Navigation = ({ navigation, location }: Props) => {
+const Navigation = ({ navigation, location, match }: Props) => {
   return (
     <Box display="flex">
       {navigation.map(({ path, label }) => (
         <Box marginX={1} key={path}>
+          {console.log(path, location)}
           <NavigationItem path={path}>{label}</NavigationItem>
-          {location.pathname === path && <Box marginTop={0.5} height={6} width="100%" bgcolor="primary.main" />}
+          {location.pathname.startsWith(path) && <Box marginTop={0.5} height={6} width="100%" bgcolor="primary.main" />}
         </Box>
       ))}
     </Box>

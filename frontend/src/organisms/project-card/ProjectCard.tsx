@@ -6,7 +6,7 @@ import CardMedia from "@material-ui/core/CardMedia";
 import ScheduleIcon from "@material-ui/icons/Schedule";
 
 import { Article } from "./types";
-
+import Link from "../../atoms/link/Link";
 interface Props {
   article: Article;
 }
@@ -15,9 +15,11 @@ const ProjectCard = ({ article }: Props) => {
   return (
     <>
       <Card>
-        <Box height={200} clone>
-          <CardMedia image={`${process.env.PUBLIC_URL}${article.image_path}`} />
-        </Box>
+        <Link path={`/projects/${article.id}`} display="inline">
+          <Box height={200} clone>
+            <CardMedia image={`${process.env.PUBLIC_URL}${article.image_path}`} />
+          </Box>
+        </Link>
       </Card>
       <Box display="flex" justifyContent="space-between" color="common.black" marginTop={1}>
         <Typography variant="subtitle2">{article.heading}</Typography>

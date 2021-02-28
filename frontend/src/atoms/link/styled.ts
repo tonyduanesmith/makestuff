@@ -1,8 +1,10 @@
 import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 
-const linkStyles = css`
-  display: inline-flex;
+import { DisplayType } from "./types";
+
+const linkStyles = css<{ display: DisplayType }>`
+  display: ${p => p.display};
   text-decoration: none;
   align-items: center;
   color: ${p => p.theme.palette.grey[500]};
@@ -12,10 +14,10 @@ const linkStyles = css`
   }
 `;
 
-export const StyledLink = styled(Link)`
+export const StyledLink = styled(Link)<{ display: DisplayType }>`
   ${linkStyles}
 `;
 
-export const StyledExternalLink = styled.a`
+export const StyledExternalLink = styled.a<{ display: DisplayType }>`
   ${linkStyles}
 `;
