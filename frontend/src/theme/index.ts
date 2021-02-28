@@ -4,7 +4,7 @@ const theme = createMuiTheme({
   spacing: 8,
   palette: {
     primary: {
-      main: "#E95A0C",
+      main: "#ff00ff",
     },
     common: {
       black: "#000000",
@@ -46,6 +46,11 @@ const theme = createMuiTheme({
     },
     subtitle2: {
       fontSize: 16,
+    },
+  },
+  props: {
+    MuiGrid: {
+      spacing: 4,
     },
   },
 });
