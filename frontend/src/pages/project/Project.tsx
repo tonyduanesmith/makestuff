@@ -31,11 +31,11 @@ const Project = () => {
               <Typography variant="subtitle1">{moment(data.article.created).fromNow()}</Typography>
             </Box>
           </Grid>
-          <Grid item xs={8}>
+          <Grid item xs={12} md={8}>
             <Image src={`${process.env.PUBLIC_URL}${data.article.image_path}`} alt="test" />
             <ReactMarkdown source={data.article.main_markdown ?? ""} />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} md={4}>
             <Box boxShadow="1" bgcolor="primary.main" borderRadius="borderRadius" padding={2}>
               <ReactMarkdown source={data.article.sidebar_markdown} />
             </Box>

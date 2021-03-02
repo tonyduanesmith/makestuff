@@ -19,7 +19,7 @@ const Introduction = ({ heading, children, image = "", imageFrame = "default" }:
       {hasImage && (
         <Grid item xs={12} sm={4}>
           <Box textAlign={{ xs: "center" }}>
-            <Image src={image} alt="me" frame={imageFrame} />
+            <Image src={image} alt="me" frame={imageFrame} maxHeight="300px" />
           </Box>
         </Grid>
       )}
