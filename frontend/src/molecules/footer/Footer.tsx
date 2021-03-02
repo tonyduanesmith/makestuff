@@ -6,7 +6,6 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import EmailIcon from "@material-ui/icons/Email";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
-import Divider from "@material-ui/core/Divider";
 
 import quickLinks from "../../constants/navigation";
 import Link from "../../atoms/link/Link";
@@ -23,7 +22,7 @@ const Footer = () => {
               </Box>
 
               {quickLinks.map(link => (
-                <Box marginTop={3} key={link.path}>
+                <Box marginTop={2} key={link.path}>
                   <Link path={link.path}>{link.label}</Link>
                 </Box>
               ))}

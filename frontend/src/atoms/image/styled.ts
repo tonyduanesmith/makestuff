@@ -7,7 +7,7 @@ export const circle = css`
 `;
 
 export const StyledImage = styled.img<StyledImageProps>`
-  max-height: 300px;
+  max-height: ${p => p.maxHeight};
   max-width: 100%;
   object-fit: contain;
 
