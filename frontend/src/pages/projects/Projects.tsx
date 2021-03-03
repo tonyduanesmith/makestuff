@@ -1,14 +1,24 @@
+import { useState } from "react";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { useQuery } from "@apollo/client";
+import { OptionsType, OptionTypeBase } from "react-select";
 
 import { Article } from "./types";
 import { GET_ARTICLES } from "./graphql";
 import ProjectCard from "../../organisms/project-card/ProjectCard";
+import Select from "../../atoms/select/Select";
 
 const Projects = () => {
   const { data } = useQuery<{ articles: Array<Article> }>(GET_ARTICLES);
+  const [selectedTags, setSelectedTags] = useState<{ label: string; value: string } | null>();
+
+  const options = [
+    { value: "chocolate", label: "Chocolate" },
+    { value: "strawberry", label: "Strawberry" },
+    { value: "vanilla", label: "Vanilla" },
+  ];
 
   return (
     <Box width="100%" marginTop={2}>
@@ -32,6 +42,11 @@ const Projects = () => {
               <Typography variant="h4">Projects</Typography>
             </Box>
           </Grid>
+          <Grid item xs={12} sm={12} md={4}></Grid>
+          <Grid item xs={12} sm={12} md={4}>
+            <Select value={selectedTags} options={options} onChange={selected => setSelectedTags(selected)} />
+          </Grid>
+          <Grid item xs={12} sm={12} md={4}></Grid>
           {data?.articles.map(article => (
             <Grid item xs={12} sm={6} md={4} key={article.id}>
               <ProjectCard article={article} />
