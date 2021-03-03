@@ -29,7 +29,7 @@ module.exports = {
   Mutation: {
     async createArticle(
       parent,
-      { articleInput: { heading, subheading, main_markdown, sidebar_markdown, image_path } },
+      { articleInput: { heading, subheading, main_markdown, sidebar_markdown, image_path, tags } },
     ) {
       const newArticle = new Article({
         heading,
@@ -39,6 +39,7 @@ module.exports = {
         image_path,
         created: new Date(),
         modified: new Date(),
+        tags,
       });
 
       const { valid, errors } = validateArticlesInput(heading, subheading, main_markdown, image_path);

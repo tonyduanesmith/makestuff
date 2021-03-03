@@ -6,7 +6,10 @@
     "modified": "2015-02-10T11:20:42.389Z",
     "image_path": "/img/one.jpg",
     "main_markdown": "# This is some test mark down \n ### This is another test \n this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text ",
-    "sidebar_markdown": "1. test, 2. test, 3. test"
+    "sidebar_markdown": "1. test, 2. test, 3. test",
+    "tags": {
+      "category": ["narrow boat"]
+    }
   },
   {
     "heading": "Heading 2",
@@ -15,7 +18,10 @@
     "modified": "2015-02-10T11:20:42.389Z",
     "image_path": "/img/two.jpg",
     "main_markdown": "## Tech\nDillinger uses a number of open source projects to work properly:\n- [AngularJS] - HTML enhanced for web apps!\n- [Ace Editor] - awesome web-based text editor\n- [markdown-it] - Markdown parser done right. Fast and easy to extend.\n- [Twitter Bootstrap] - great UI boilerplate for modern web apps\n- [node.js] - evented I/O for the backend\n- [Express] - fast node.js network app framework [@tjholowaychuk]\n- [Gulp] - the streaming build system\n- [Breakdance](https://breakdance.github.io/breakdance/) - HTML\nto Markdown converter\n- [jQuery] - duh",
-    "sidebar_markdown": "1. test, 2. test, 3. test"
+    "sidebar_markdown": "1. test, 2. test, 3. test",
+    "tags": {
+      "category": ["narrow boat"]
+    }
   },
   {
     "heading": "Heading 3",
@@ -24,7 +30,10 @@
     "modified": "2015-02-10T11:20:42.389Z",
     "image_path": "/img/three.jpg",
     "main_markdown": "This is some test mark down",
-    "sidebar_markdown": "1. test, 2. test, 3. test"
+    "sidebar_markdown": "1. test, 2. test, 3. test",
+    "tags": {
+      "category": ["narrow boat"]
+    }
   },
   {
     "heading": "Anthony Heading",
@@ -33,7 +42,10 @@
     "modified": "2015-02-10T11:20:42.389Z",
     "image_path": "/img/one.jpg",
     "main_markdown": "# This is some test mark down \n ### This is another test \n this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text ",
-    "sidebar_markdown": "1. test, 2. test, 3. test"
+    "sidebar_markdown": "1. test, 2. test, 3. test",
+    "tags": {
+      "category": ["narrow boat"]
+    }
   },
   {
     "heading": "Heading 2",
@@ -42,7 +54,10 @@
     "modified": "2015-02-10T11:20:42.389Z",
     "image_path": "/img/two.jpg",
     "main_markdown": "## Tech\nDillinger uses a number of open source projects to work properly:\n- [AngularJS] - HTML enhanced for web apps!\n- [Ace Editor] - awesome web-based text editor\n- [markdown-it] - Markdown parser done right. Fast and easy to extend.\n- [Twitter Bootstrap] - great UI boilerplate for modern web apps\n- [node.js] - evented I/O for the backend\n- [Express] - fast node.js network app framework [@tjholowaychuk]\n- [Gulp] - the streaming build system\n- [Breakdance](https://breakdance.github.io/breakdance/) - HTML\nto Markdown converter\n- [jQuery] - duh",
-    "sidebar_markdown": "1. test, 2. test, 3. test"
+    "sidebar_markdown": "1. test, 2. test, 3. test",
+    "tags": {
+      "category": ["narrow boat"]
+    }
   },
   {
     "heading": "Heading 3",
@@ -51,7 +66,10 @@
     "modified": "2015-02-10T11:20:42.389Z",
     "image_path": "/img/three.jpg",
     "main_markdown": "This is some test mark down",
-    "sidebar_markdown": "1. test, 2. test, 3. test"
+    "sidebar_markdown": "1. test, 2. test, 3. test",
+    "tags": {
+      "category": ["narrow boat"]
+    }
   },
   {
     "heading": "Anthony Heading",
@@ -60,7 +78,10 @@
     "modified": "2015-02-10T11:20:42.389Z",
     "image_path": "/img/one.jpg",
     "main_markdown": "# This is some test mark down \n ### This is another test \n this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text ",
-    "sidebar_markdown": "1. test, 2. test, 3. test"
+    "sidebar_markdown": "1. test, 2. test, 3. test",
+    "tags": {
+      "category": ["narrow boat"]
+    }
   },
   {
     "heading": "Heading 2",
@@ -69,7 +90,10 @@
     "modified": "2015-02-10T11:20:42.389Z",
     "image_path": "/img/two.jpg",
     "main_markdown": "## Tech\nDillinger uses a number of open source projects to work properly:\n- [AngularJS] - HTML enhanced for web apps!\n- [Ace Editor] - awesome web-based text editor\n- [markdown-it] - Markdown parser done right. Fast and easy to extend.\n- [Twitter Bootstrap] - great UI boilerplate for modern web apps\n- [node.js] - evented I/O for the backend\n- [Express] - fast node.js network app framework [@tjholowaychuk]\n- [Gulp] - the streaming build system\n- [Breakdance](https://breakdance.github.io/breakdance/) - HTML\nto Markdown converter\n- [jQuery] - duh",
-    "sidebar_markdown": "1. test, 2. test, 3. test"
+    "sidebar_markdown": "1. test, 2. test, 3. test",
+    "tags": {
+      "category": ["narrow boat"]
+    }
   },
   {
     "heading": "Heading 3",
@@ -78,7 +102,10 @@
     "modified": "2015-02-10T11:20:42.389Z",
     "image_path": "/img/three.jpg",
     "main_markdown": "This is some test mark down",
-    "sidebar_markdown": "1. test, 2. test, 3. test"
+    "sidebar_markdown": "1. test, 2. test, 3. test",
+    "tags": {
+      "category": ["narrow boat"]
+    }
   },
   {
     "heading": "Anthony Heading",
@@ -87,7 +114,10 @@
     "modified": "2015-02-10T11:20:42.389Z",
     "image_path": "/img/one.jpg",
     "main_markdown": "# This is some test mark down \n ### This is another test \n this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text ",
-    "sidebar_markdown": "1. test, 2. test, 3. test"
+    "sidebar_markdown": "1. test, 2. test, 3. test",
+    "tags": {
+      "category": ["narrow boat"]
+    }
   },
   {
     "heading": "Heading 2",
@@ -96,7 +126,10 @@
     "modified": "2015-02-10T11:20:42.389Z",
     "image_path": "/img/two.jpg",
     "main_markdown": "## Tech\nDillinger uses a number of open source projects to work properly:\n- [AngularJS] - HTML enhanced for web apps!\n- [Ace Editor] - awesome web-based text editor\n- [markdown-it] - Markdown parser done right. Fast and easy to extend.\n- [Twitter Bootstrap] - great UI boilerplate for modern web apps\n- [node.js] - evented I/O for the backend\n- [Express] - fast node.js network app framework [@tjholowaychuk]\n- [Gulp] - the streaming build system\n- [Breakdance](https://breakdance.github.io/breakdance/) - HTML\nto Markdown converter\n- [jQuery] - duh",
-    "sidebar_markdown": "1. test, 2. test, 3. test"
+    "sidebar_markdown": "1. test, 2. test, 3. test",
+    "tags": {
+      "category": ["narrow boat"]
+    }
   },
   {
     "heading": "Heading 3",
@@ -105,7 +138,10 @@
     "modified": "2015-02-10T11:20:42.389Z",
     "image_path": "/img/three.jpg",
     "main_markdown": "This is some test mark down",
-    "sidebar_markdown": "1. test, 2. test, 3. test"
+    "sidebar_markdown": "1. test, 2. test, 3. test",
+    "tags": {
+      "category": ["narrow boat"]
+    }
   },
   {
     "heading": "Anthony Heading",
@@ -114,7 +150,10 @@
     "modified": "2015-02-10T11:20:42.389Z",
     "image_path": "/img/one.jpg",
     "main_markdown": "# This is some test mark down \n ### This is another test \n this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text ",
-    "sidebar_markdown": "1. test, 2. test, 3. test"
+    "sidebar_markdown": "1. test, 2. test, 3. test",
+    "tags": {
+      "category": ["narrow boat"]
+    }
   },
   {
     "heading": "Heading 2",
@@ -123,7 +162,10 @@
     "modified": "2015-02-10T11:20:42.389Z",
     "image_path": "/img/two.jpg",
     "main_markdown": "## Tech\nDillinger uses a number of open source projects to work properly:\n- [AngularJS] - HTML enhanced for web apps!\n- [Ace Editor] - awesome web-based text editor\n- [markdown-it] - Markdown parser done right. Fast and easy to extend.\n- [Twitter Bootstrap] - great UI boilerplate for modern web apps\n- [node.js] - evented I/O for the backend\n- [Express] - fast node.js network app framework [@tjholowaychuk]\n- [Gulp] - the streaming build system\n- [Breakdance](https://breakdance.github.io/breakdance/) - HTML\nto Markdown converter\n- [jQuery] - duh",
-    "sidebar_markdown": "1. test, 2. test, 3. test"
+    "sidebar_markdown": "1. test, 2. test, 3. test",
+    "tags": {
+      "category": ["narrow boat"]
+    }
   },
   {
     "heading": "Heading 3",
@@ -132,7 +174,10 @@
     "modified": "2015-02-10T11:20:42.389Z",
     "image_path": "/img/three.jpg",
     "main_markdown": "This is some test mark down",
-    "sidebar_markdown": "1. test, 2. test, 3. test"
+    "sidebar_markdown": "1. test, 2. test, 3. test",
+    "tags": {
+      "category": ["narrow boat"]
+    }
   },
   {
     "heading": "Anthony Heading",
@@ -141,7 +186,10 @@
     "modified": "2015-02-10T11:20:42.389Z",
     "image_path": "/img/one.jpg",
     "main_markdown": "# This is some test mark down \n ### This is another test \n this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text this is some more text ",
-    "sidebar_markdown": "1. test, 2. test, 3. test"
+    "sidebar_markdown": "1. test, 2. test, 3. test",
+    "tags": {
+      "category": ["narrow boat"]
+    }
   },
   {
     "heading": "Heading 2",
@@ -150,7 +198,10 @@
     "modified": "2015-02-10T11:20:42.389Z",
     "image_path": "/img/two.jpg",
     "main_markdown": "## Tech\nDillinger uses a number of open source projects to work properly:\n- [AngularJS] - HTML enhanced for web apps!\n- [Ace Editor] - awesome web-based text editor\n- [markdown-it] - Markdown parser done right. Fast and easy to extend.\n- [Twitter Bootstrap] - great UI boilerplate for modern web apps\n- [node.js] - evented I/O for the backend\n- [Express] - fast node.js network app framework [@tjholowaychuk]\n- [Gulp] - the streaming build system\n- [Breakdance](https://breakdance.github.io/breakdance/) - HTML\nto Markdown converter\n- [jQuery] - duh",
-    "sidebar_markdown": "1. test, 2. test, 3. test"
+    "sidebar_markdown": "1. test, 2. test, 3. test",
+    "tags": {
+      "category": ["narrow boat"]
+    }
   },
   {
     "heading": "Heading 3",
@@ -159,6 +210,9 @@
     "modified": "2015-02-10T11:20:42.389Z",
     "image_path": "/img/three.jpg",
     "main_markdown": "This is some test mark down",
-    "sidebar_markdown": "1. test, 2. test, 3. test"
+    "sidebar_markdown": "1. test, 2. test, 3. test",
+    "tags": {
+      "category": ["narrow boat"]
+    }
   }
 ]

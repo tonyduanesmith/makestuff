@@ -25,6 +25,7 @@ const Projects = () => {
                 alignItems="center"
                 justifyContent="center"
                 marginRight={1}
+                color="common.white"
               >
                 <Typography variant="h4">{data?.articles.length}</Typography>
               </Box>

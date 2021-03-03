@@ -8,6 +8,9 @@ const articleSchema = new mongoose.Schema({
   image_path: String,
   main_markdown: String,
   sidebar_markdown: String,
+  tags: {
+    category: [String],
+  },
 });
 
 const Article = mongoose.model("article", articleSchema);
