@@ -1,10 +1,9 @@
 const { gql } = require("apollo-server");
-const { Kind, GraphQLScalarType } = require("graphql");
 
 module.exports = gql`
   scalar DateTime
   type Tags {
-    category: [String]
+    categorys: [String]
   }
   type Article {
     id: ID!
@@ -22,7 +21,7 @@ module.exports = gql`
     article(id: ID!): Article
   }
   input TagsInput {
-    category: [String]
+    categorys: [String]
   }
   input ArticleInput {
     heading: String!

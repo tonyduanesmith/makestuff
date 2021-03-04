@@ -11,6 +11,9 @@ export const GET_ARTICLES = gql`
       modified
       image_path
       id
+      tags {
+        categorys
+      }
     }
   }
 `;

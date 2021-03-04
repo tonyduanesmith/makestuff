@@ -3,21 +3,22 @@ import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { useQuery } from "@apollo/client";
-import { OptionsType, OptionTypeBase } from "react-select";
 
-import { Article } from "./types";
+import { ArticleType } from "./types";
 import { GET_ARTICLES } from "./graphql";
 import ProjectCard from "../../organisms/project-card/ProjectCard";
 import Select from "../../atoms/select/Select";
+import { getTagsOptions } from "./utils";
 
 const Projects = () => {
-  const { data } = useQuery<{ articles: Array<Article> }>(GET_ARTICLES);
-  const [selectedTags, setSelectedTags] = useState<{ label: string; value: string } | null>();
+  const { data } = useQuery<{ articles: Array<ArticleType> }>(GET_ARTICLES);
+  const [selectedCategorys, setSelectedCategorys] = useState<{ label: string; value: string } | null>();
+  const [selectedDownloadables, setSelectedDownloadables] = useState<{ label: string; value: string } | null>();
 
-  const options = [
-    { value: "chocolate", label: "Chocolate" },
-    { value: "strawberry", label: "Strawberry" },
-    { value: "vanilla", label: "Vanilla" },
+  const tagOptions = getTagsOptions(data?.articles ?? []);
+  const downloadableOptions = [
+    { label: "Yes", value: "Yes" },
+    { label: "No", value: "No" },
   ];
 
   return (
@@ -44,9 +45,23 @@ const Projects = () => {
           </Grid>
           <Grid item xs={12} sm={12} md={4}></Grid>
           <Grid item xs={12} sm={12} md={4}>
-            <Select value={selectedTags} options={options} onChange={selected => setSelectedTags(selected)} />
+            <Select
+              value={selectedCategorys}
+              options={tagOptions}
+              onChange={selected => setSelectedCategorys(selected)}
+              label="Category"
+              isClearable
+            />
           </Grid>
-          <Grid item xs={12} sm={12} md={4}></Grid>
+          <Grid item xs={12} sm={12} md={4}>
+            <Select
+              value={selectedDownloadables}
+              options={downloadableOptions}
+              onChange={selected => setSelectedDownloadables(selected)}
+              label="Downloadables"
+              isClearable
+            />
+          </Grid>
           {data?.articles.map(article => (
             <Grid item xs={12} sm={6} md={4} key={article.id}>
               <ProjectCard article={article} />

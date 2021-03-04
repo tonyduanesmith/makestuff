@@ -9,7 +9,7 @@ const articleSchema = new mongoose.Schema({
   main_markdown: String,
   sidebar_markdown: String,
   tags: {
-    category: [String],
+    categorys: [String],
   },
 });
 

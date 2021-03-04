@@ -1,4 +1,8 @@
-export type Article = {
+export type TagsType = {
+  categorys: Array<string>;
+};
+
+export type ArticleType = {
   created: Date;
   modified: Date;
   heading: string;
@@ -7,4 +11,5 @@ export type Article = {
   main_markdown: string;
   sidebar_markdown: string;
   subheading: string;
+  tags: TagsType;
 };
