@@ -9,17 +9,23 @@ import { GET_ARTICLES } from "./graphql";
 import ProjectCard from "../../organisms/project-card/ProjectCard";
 import Select from "../../atoms/select/Select";
 import { getTagsOptions } from "./utils";
+import Search from "../../atoms/search/Search";
 
 const Projects = () => {
   const { data } = useQuery<{ articles: Array<ArticleType> }>(GET_ARTICLES);
   const [selectedCategorys, setSelectedCategorys] = useState<{ label: string; value: string } | null>();
   const [selectedDownloadables, setSelectedDownloadables] = useState<{ label: string; value: string } | null>();
+  const [searchValue, setSearchValue] = useState("");
 
   const tagOptions = getTagsOptions(data?.articles ?? []);
   const downloadableOptions = [
     { label: "Yes", value: "Yes" },
     { label: "No", value: "No" },
   ];
+
+  const handleOnClear = () => {
+    setSearchValue("");
+  };
 
   return (
     <Box width="100%" marginTop={2}>
@@ -43,7 +49,9 @@ const Projects = () => {
               <Typography variant="h4">Projects</Typography>
             </Box>
           </Grid>
-          <Grid item xs={12} sm={12} md={4}></Grid>
+          <Grid item xs={12} sm={12} md={4}>
+            <Search value={searchValue} onChange={setSearchValue} label="Search" onClear={handleOnClear} />
+          </Grid>
           <Grid item xs={12} sm={12} md={4}>
             <Select
               value={selectedCategorys}
