@@ -11,6 +11,7 @@ const articleSchema = new mongoose.Schema({
   tags: {
     categorys: [String],
   },
+  downloads: [String],
 });
 
 const Article = mongoose.model("article", articleSchema);
