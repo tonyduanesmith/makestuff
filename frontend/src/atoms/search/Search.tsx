@@ -6,20 +6,22 @@ import { StyledInput, StyledSearchIcon, StyledClearIcon } from "./styled";
 
 interface Props {
   label?: string;
-  value: string;
   onChange: (a: string) => void;
   onClear?: () => void;
 }
 
-const Search = ({ label, value, onChange, onClear }: Props) => {
+const Search = ({ label, onChange, onClear }: Props) => {
   const [showSearchIcon, setShowSearchIcon] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
 
   const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(event.target.value);
     onChange(event.target.value);
   };
 
   const handleOnClear = (event: MouseEvent) => {
     event.preventDefault();
+    setSearchValue("");
     if (onClear) onClear();
   };
 
@@ -31,12 +33,12 @@ const Search = ({ label, value, onChange, onClear }: Props) => {
         </Box>
       )}
       <Box position="relative">
-        <StyledSearchIcon showSearchIcon={showSearchIcon || !!value.length} />
-        <StyledClearIcon showClearIcon={!!value.length} onMouseDown={handleOnClear} />
+        <StyledSearchIcon showSearchIcon={showSearchIcon || !!searchValue.length} />
+        <StyledClearIcon showClearIcon={!!searchValue.length} onMouseDown={handleOnClear} />
         <StyledInput
           onFocus={() => setShowSearchIcon(true)}
           onBlur={() => setShowSearchIcon(false)}
-          value={value}
+          value={searchValue}
           onChange={handleOnChange}
         />
       </Box>

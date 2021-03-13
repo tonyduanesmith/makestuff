@@ -15,17 +15,12 @@ const Projects = () => {
   const { data } = useQuery<{ articles: Array<ArticleType> }>(GET_ARTICLES);
   const [selectedCategorys, setSelectedCategorys] = useState<{ label: string; value: string } | null>();
   const [selectedDownloadables, setSelectedDownloadables] = useState<{ label: string; value: string } | null>();
-  const [searchValue, setSearchValue] = useState("");
 
   const tagOptions = getTagsOptions(data?.articles ?? []);
   const downloadableOptions = [
     { label: "Yes", value: "Yes" },
     { label: "No", value: "No" },
   ];
-
-  const handleOnClear = () => {
-    setSearchValue("");
-  };
 
   return (
     <Box width="100%" marginTop={2}>
@@ -50,7 +45,7 @@ const Projects = () => {
             </Box>
           </Grid>
           <Grid item xs={12} sm={12} md={4}>
-            <Search value={searchValue} onChange={setSearchValue} label="Search" onClear={handleOnClear} />
+            <Search onChange={() => console.log("test")} label="Search" />
           </Grid>
           <Grid item xs={12} sm={12} md={4}>
             <Select
