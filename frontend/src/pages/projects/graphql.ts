@@ -1,8 +1,8 @@
 import gql from "graphql-tag";
 
 export const GET_ARTICLES = gql`
-  query articles {
-    articles {
+  query articles($search: String, $downloadables: Boolean, $categorys: [String]) {
+    articles(search: $search, categorys: $categorys, downloadables: $downloadables) {
       heading
       subheading
       main_markdown
@@ -14,6 +14,14 @@ export const GET_ARTICLES = gql`
       tags {
         categorys
       }
+    }
+  }
+`;
+
+export const GET_TAGS = gql`
+  query {
+    tags {
+      categorys
     }
   }
 `;

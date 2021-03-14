@@ -1,28 +1,34 @@
-import { useState, ChangeEvent, MouseEvent } from "react";
+import { useState, useCallback, ChangeEvent, MouseEvent } from "react";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
+import { debounce } from "lodash";
 
 import { StyledInput, StyledSearchIcon, StyledClearIcon } from "./styled";
 
 interface Props {
   label?: string;
+  value: string;
   onChange: (a: string) => void;
   onClear?: () => void;
 }
 
-const Search = ({ label, onChange, onClear }: Props) => {
+const Search = ({ label, value, onChange, onClear }: Props) => {
   const [showSearchIcon, setShowSearchIcon] = useState(false);
-  const [searchValue, setSearchValue] = useState("");
+  const [searchValue, setSearchValue] = useState(value);
+
+  const debouncedSave = useCallback(
+    debounce(event => onChange(event.target.value), 500),
+    [],
+  );
 
   const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
+    debouncedSave(event);
     setSearchValue(event.target.value);
-    onChange(event.target.value);
   };
 
   const handleOnClear = (event: MouseEvent) => {
-    event.preventDefault();
-    setSearchValue("");
     if (onClear) onClear();
+    setSearchValue("");
   };
 
   return (

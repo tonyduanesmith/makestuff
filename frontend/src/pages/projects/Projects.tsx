@@ -5,22 +5,37 @@ import Typography from "@material-ui/core/Typography";
 import { useQuery } from "@apollo/client";
 
 import { ArticleType } from "./types";
-import { GET_ARTICLES } from "./graphql";
+import { GET_ARTICLES, GET_TAGS } from "./graphql";
 import ProjectCard from "../../organisms/project-card/ProjectCard";
 import Select from "../../atoms/select/Select";
-import { getTagsOptions } from "./utils";
 import Search from "../../atoms/search/Search";
 
 const Projects = () => {
-  const { data } = useQuery<{ articles: Array<ArticleType> }>(GET_ARTICLES);
   const [selectedCategorys, setSelectedCategorys] = useState<{ label: string; value: string } | null>();
   const [selectedDownloadables, setSelectedDownloadables] = useState<{ label: string; value: string } | null>();
+  const [searchValue, setSearchValue] = useState("");
+  const { data: tagsData } = useQuery<{ tags: { categorys: Array<string> } }>(GET_TAGS);
 
-  const tagOptions = getTagsOptions(data?.articles ?? []);
+  console.log(selectedCategorys?.value ? [selectedCategorys?.value] : tagsData?.tags.categorys);
+  const { data } = useQuery<{ articles: Array<ArticleType> }>(GET_ARTICLES, {
+    variables: {
+      search: searchValue,
+      categorys: selectedCategorys?.value ? [selectedCategorys?.value] : tagsData?.tags.categorys,
+      downloadables: selectedDownloadables?.value === "Yes",
+    },
+  });
+
+  const tagOptions = tagsData?.tags.categorys.map(tag => ({ label: tag, value: tag }));
   const downloadableOptions = [
     { label: "Yes", value: "Yes" },
     { label: "No", value: "No" },
   ];
+
+  const handleOnClear = () => {
+    setSearchValue("");
+  };
+
+  console.log(searchValue);
 
   return (
     <Box width="100%" marginTop={2}>
@@ -45,7 +60,7 @@ const Projects = () => {
             </Box>
           </Grid>
           <Grid item xs={12} sm={12} md={4}>
-            <Search onChange={() => console.log("test")} label="Search" />
+            <Search value={searchValue} onChange={setSearchValue} label="Search" onClear={handleOnClear} />
           </Grid>
           <Grid item xs={12} sm={12} md={4}>
             <Select

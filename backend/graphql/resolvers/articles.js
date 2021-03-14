@@ -5,9 +5,19 @@ const { validateArticlesInput } = require("../validators/articlesValidator");
 
 module.exports = {
   Query: {
-    async articles(parent, { first }) {
+    async articles(parent, { first, search = "", downloadables = false, categorys }) {
       try {
-        const articles = await Article.find().sort({ created: -1 }).limit(first);
+        const articles = await Article.find({
+          heading: {
+            $regex: search,
+            $options: "i",
+          },
+          ...(categorys ? { "tags.categorys": { $in: categorys } } : undefined),
+        })
+          .sort({ created: -1 })
+          .limit(first);
+
+        console.log(articles);
         return articles;
       } catch (error) {
         throw new Error(error);

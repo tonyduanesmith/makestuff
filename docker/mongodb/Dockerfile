@@ -1,4 +1,10 @@
 FROM mongo
 
-COPY ./seed/init.json /init.json
-CMD mongoimport --host mongodb --db makestuff --collection articles --type json --file /init.json --jsonArray
+COPY ./seed/articles.json /articles.json
+COPY ./seed/tags.json /tags.json
+
+ADD bin/mongodb.sh bin/mongodb.sh
+
+RUN chmod +x bin/mongodb.sh
+
+CMD bin/mongodb.sh

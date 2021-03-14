@@ -18,8 +18,9 @@ module.exports = gql`
     downloads: [String]!
   }
   type Query {
-    articles(first: Int): [Article]
+    articles(first: Int, search: String, downloadables: Boolean, categorys: [String]): [Article]
     article(id: ID!): Article
+    tags: Tags
   }
   input TagsInput {
     categorys: [String]!
